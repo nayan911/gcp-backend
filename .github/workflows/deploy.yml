@@ -28,6 +28,14 @@ jobs:
       uses: google-github-actions/setup-gcloud@v1
       with:
         install_components: 'gke-gcloud-auth-plugin'
+
+    - name: Debug environment variables
+      run: |
+        echo "PROJECT_ID: ${{ env.PROJECT_ID }}"
+        echo "SERVICE_ACCOUNT: ${{ env.SERVICE_ACCOUNT }}"
+        echo "REGION: ${{ env.REGION }}"
+        echo "ARTIFACT_REPOSITORY: ${{ env.ARTIFACT_REPOSITORY }}"
+        echo "IMAGE_NAME: ${{ env.IMAGE_NAME }}"
     
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
