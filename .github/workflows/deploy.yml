@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_ID: '${{ secrets.GCP_PROJECT_ID }}'
+  PROJECT_ID: green-chalice-459307-b9
   SERVICE_ACCOUNT: '${{ secrets.SERVICE_ACCOUNT }}'
-  REGION: '${{ secrets.REGION }}'
-  ARTIFACT_REPOSITORY: '${{ secrets.ARTIFACT_REPO }}'
+  REGION: us-central1
+  ARTIFACT_REPOSITORY: backend-artifact
   IMAGE_NAME: gcp-backend
 
 jobs:
