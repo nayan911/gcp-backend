@@ -49,4 +49,4 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}' .
-        docker push '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPOSITORY }}/$IMAGE_NAME:${{ github.sha }}'
+        docker push '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPOSITORY }}/${{ IMAGE_NAME }}:${{ github.sha }}'
