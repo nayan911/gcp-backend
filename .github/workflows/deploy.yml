@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_ID: green-chalice-459307-b9
+  PROJECT_ID: clear-veld-461918-s2
   SERVICE_ACCOUNT: '${{ secrets.SERVICE_ACCOUNT }}'
   REGION: us-central1
-  ARTIFACT_REPOSITORY: backend-artifact
+  ARTIFACT_REPOSITORY: check
   IMAGE_NAME: gcp-backend
 
 jobs:
