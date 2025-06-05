@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: clear-veld-461918-s2
-  SERVICE_ACCOUNT: '${{ secrets.SERVICE_ACCOUNT }}'
+  SERVICE_ACCOUNT: check-233@clear-veld-461918-s2.iam.gserviceaccount.com
   REGION: us-central1
   ARTIFACT_REPOSITORY: check
   IMAGE_NAME: gcp-backend
