@@ -37,6 +37,10 @@ jobs:
         echo "ARTIFACT_REPOSITORY: ${{ env.ARTIFACT_REPOSITORY }}"
         echo "IMAGE_NAME: ${{ env.IMAGE_NAME }}"
         echo "GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}"
+        echo "DB_HOST: ${{ secrets.DB_HOST }}"
+        echo "DB_NAME: ${{ secrets.DB_NAME }}"
+        echo "DB_USER: ${{ secrets.DB_USER }}"
+        echo "DB_PASSWORD: ${{ secrets.DB_PASSWORD }}"
     
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
