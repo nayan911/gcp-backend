@@ -11,10 +11,10 @@ env:
   REGION: us-central1
   ARTIFACT_REPOSITORY: check
   IMAGE_NAME: gcp-backend
-  DB_HOST: ${{ secrets.DB_HOST }}
-  DB_NAME: ${{ secrets.DB_NAME }}
-  DB_USER: ${{ secrets.DB_USER }}
-  DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  DB_HOST: 104.198.198.225
+  DB_NAME: gcp
+  DB_USER: root
+  DB_PASSWORD: New_password123
 
 jobs:
   build-and-deploy:
@@ -41,10 +41,10 @@ jobs:
         echo "ARTIFACT_REPOSITORY: ${{ env.ARTIFACT_REPOSITORY }}"
         echo "IMAGE_NAME: ${{ env.IMAGE_NAME }}"
         echo "GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}"
-        echo "DB_HOST: ${{ secrets.DB_HOST }}"
-        echo "DB_NAME: ${{ secrets.DB_NAME }}"
-        echo "DB_USER: ${{ secrets.DB_USER }}"
-        echo "DB_PASSWORD: ${{ secrets.DB_PASSWORD }}"
+        echo "DB_HOST: ${{ env.DB_HOST }}"
+        echo "DB_NAME: ${{ env.DB_NAME }}"
+        echo "DB_USER: ${{ env.DB_USER }}"
+        echo "DB_PASSWORD: ${{ env.DB_PASSWORD }}"
     
     - name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v1
@@ -58,8 +58,8 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}' \
-          --build-arg DB_HOST='${{ secrets.DB_HOST }}' \
-          --build-arg DB_NAME='${{ secrets.DB_NAME }}' \
-          --build-arg DB_USER='${{ secrets.DB_USER }}' \
-          --build-arg DB_PASSWORD='${{ secrets.DB_PASSWORD }}' .
+          --build-arg DB_HOST='104.198.198.225' \
+          --build-arg DB_NAME='gcp' \
+          --build-arg DB_USER='root' \
+          --build-arg DB_PASSWORD='New_password123' .
         docker push '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.ARTIFACT_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}'
